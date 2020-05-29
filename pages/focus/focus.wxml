@@ -14,6 +14,6 @@
 	<view class="again" wx:else bindtap='againTimer'>
 		<t-button size="mini" type="change" text="再来一组" />
 	</view>
-	<t-confirm visible="{{false}}" placeholder="放弃理由" />
-	<t-confirm visible="{{false}}" placeholder="完成了什么?" />
+	<t-prompt visible="{{false}}" placeholder="放弃理由" />
+	<t-prompt visible="{{false}}" placeholder="完成了什么?" />
 </view>

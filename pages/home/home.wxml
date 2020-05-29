@@ -1,52 +1,15 @@
 <view class="home-container">
 	<scroll-view class="todoList" scroll-y="true">
-		<view class="item">
-			<view class="select active"></view>
-			<text>第1个番茄</text>
+		<view class="item" wx:for="{{list}}" wx:key="index">
+			<view class="select {{item.completed && 'active'}}"></view>
+			<text>{{item.text}}</text>
 		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第2个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第3个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第4个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第5个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第6个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第7个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第8个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第9个番茄</text>
-		</view>
-		<view class="item">
-			<view class="select"></view>
-			<text>第10个番茄</text>
-		</view>
-
 	</scroll-view>
-	<t-button class="createButton" type="change" size="mini" text="创建任务" />
+	<t-button class=" createButton" type="change" text="创建任务" bindtap="showPrompt" />
 	<view class="tomato-wrapper">
 		<view class="tomato">
 			<t-clock text="点击开始番茄" />
 		</view>
 	</view>
-	<t-confirm placeholder="完成了些什么？" visible="{{false}}" />
+	<t-prompt placeholder="完成了些什么？" visible="{{promptVisible}}" bindconfirm="confirmCreate" bindcancel="hidePrompt" />
 </view>

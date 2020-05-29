@@ -1,0 +1,9 @@
+<view class="container" wx:if="{{visible}}">
+	<view class="prompt">
+		<textarea class="textarea" placeholder="{{placeholder}}" bindinput="watchContent" value="{{content}}" />
+		<view class="actions">
+			<view class="view confirm" hover-class='active' bindtap="confirm">确定</view>
+			<view class="view" hover-class='active' bindtap="cancel">取消</view>
+		</view>
+	</view>
+</view>
