@@ -9,6 +9,6 @@
   padding-bottom: 139rpx;
 }
 
-.stop {
+.pause {
   margin-bottom: 48rpx;
 }

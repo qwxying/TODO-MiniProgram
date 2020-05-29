@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "t-button": "../../components/button/button",
-    "t-clock": "../../components/clock/clock",
-    "t-prompt": "../../components/prompt/prompt"
+    "t-button": "/components/button/button",
+    "t-clock": "/components/clock/clock",
+    "t-prompt": "/components/prompt/prompt"
   }
 }
