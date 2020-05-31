@@ -1,23 +1,15 @@
-<view class="cantainer">
-	<view class="header">
-		<view class="avatar">
-			<open-data type='userAvatarUrl'></open-data>
+	<view class="cantainer">
+		<view class="header">
+			<view class="usersInfo">
+				<open-data class="avatar" type='userAvatarUrl' />
+				<open-data class="name" type='userNickName' />
+			</view>
+			<button open-type="contact" class="qr">问题反馈</button>
 		</view>
-		<view class="details">
-			<open-data type='userNickName' class="name"></open-data>
-			<navigator url="/pages/binding/binding" wx:if="{{!me.account}}">绑定pc账号</navigator>
+
+		<view class="tabs">
+			<view hover-class='hover-active' class="{{tab === 'tomato' && 'active'}}" data-name="tomato" bindtap="changeTab">番茄历史</view>
 		</view>
-		<button open-type="contact" class="qr">问题反馈</button>
+
+		<scroll-view scroll-y="true" class="lists" wx:if="{{tab === 'tomato'}}" />
 	</view>
-
-	<view class="tabs">
-		<view hover-class='hover-active' class="{{tab === 'tomato' && 'active'}}" data-name="tomato" bindtap="changeTab">番茄历史</view>
-		<view hover-class='hover-active' class="{{tab === 'task' && 'active'}}" data-name="task" bindtap="changeTab">我完成的任务</view>
-	</view>
-
-	<scroll-view scroll-y="true" class="lists" wx:if="{{tab === 'tomato'}}">
-	</scroll-view>
-
-	<scroll-view scroll-y="true" class="lists" wx:if="{{tab === 'task'}}">
-	</scroll-view>
-</view>

@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/focus/focus",
-    "pages/home/home",
-    "pages/users/users"
+    "pages/tomato/tomato",
+    "pages/users/users",
+    "pages/statistics/statistics"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,16 +16,16 @@
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [{
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-active.png"
+        "pagePath": "pages/tomato/tomato",
+        "text": "番茄",
+        "iconPath": "images/tomato.png",
+        "selectedIconPath": "images/tomato-active.png"
       },
       {
-        "pagePath": "pages/focus/focus",
-        "text": "专注",
-        "iconPath": "images/focus.png",
-        "selectedIconPath": "images/focus-active.png"
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/statistics.png",
+        "selectedIconPath": "images/statistics-active.png"
       },
       {
         "pagePath": "pages/users/users",

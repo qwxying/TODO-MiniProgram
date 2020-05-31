@@ -1,12 +1,12 @@
 Component({
   properties: {
-    size: {
-      type: String,
-      value: ''
-    },
     type: {
       type: String,
-      value: "default"
+      value: "filled"
+    },
+    visible: {
+      type: Boolean,
+      value: true
     },
     text: {
       type: String,

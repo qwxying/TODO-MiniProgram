@@ -1,0 +1,28 @@
+<view class="cantainer">
+	<view class="clock">
+		<t-clock text="{{time}}" fontSize="52" />
+	</view>
+
+	<view class="current">
+		<view class="start" wx:if="{{timerStatus==='beforeStart'}}">
+			<t-button text="开始" bindtap="startTimer" />
+		</view>
+		<view class="continue" wx:if="{{timerStatus==='paused'}}">
+			<t-button text="继续" bindtap="continueTimer" />
+		</view>
+		<view class="pause" wx:if="{{timerStatus==='started'}}">
+			<t-button text="暂停" bindtap="pauseTimer" />
+		</view>
+		<view class="abandon" wx:if="{{timerStatus==='started'||timerStatus==='paused'}}">
+			<t-button type="blank" text="放弃" bindtap="abandonTomato" />
+		</view>
+	</view>
+
+	<view class=" another" wx:if="{{timerStatus==='completed'||timerStatus==='abandoned'}}">
+		<t-button type="filled" text="再来一组" bindtap="startTimer" />
+	</view>
+
+
+	<t-prompt visible="{{abandonTapped}}" placeholder="为…为什么要丢下我……" bindconfirm="confirmAbandon" bindcancel="cancelAbandon" />
+	<t-prompt visible="{{tomatoCompleted}}" placeholder="真棒！记录一下这段时间都完成了什么吧~" bindconfirm="confirmCompleted" bindcancel="cancelCompleted" />
+</view>

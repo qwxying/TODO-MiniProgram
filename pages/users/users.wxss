@@ -1,4 +1,3 @@
-/* pages/users/users.wxss */
 .cantainer {
   background: #F6F6F6;
   min-height: 100vh;
@@ -18,7 +17,13 @@
   margin-bottom: 23rpx;
 }
 
-.header .avatar {
+.usersInfo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.avatar {
   width: 88rpx;
   height: 88rpx;
   border-radius: 50%;
@@ -26,17 +31,19 @@
   margin-right: 20rpx;
 }
 
-.header .details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-}
-
-.header .details .name {
+.name {
   color: black;
   font-size: 32rpx;
-  padding-bottom: 22rpx;
+}
+
+.qr {
+  background: transparent;
+  color: #FE996F;
+  font-size: 24rpx;
+}
+
+.qr::after {
+  border: none;
 }
 
 .tabs {
@@ -105,14 +112,4 @@
 .cantainer .lists .item .content detail {
   flex: 1;
   flex-wrap: wrap;
-}
-
-.qr::after {
-  border: none;
-}
-
-.qr {
-  background: transparent;
-  color: #FE996F;
-  font-size: 24rpx;
 }
