@@ -40,11 +40,11 @@
 .name::after {
   content: '';
   position: absolute;
-  border-bottom: 24rpx solid #ffdccf;
+  border-bottom: 16rpx solid #ffdccf;
   left: 50%;
-  bottom: -12rpx;
+  bottom: -4rpx;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translate(-50%, -50%);
 }
 
@@ -99,11 +99,11 @@
 .date::after {
   content: '';
   position: absolute;
-  border-bottom: 24rpx solid #ffdccf;
+  border-bottom: 16rpx solid #ffdccf;
   left: 50%;
-  bottom: -12rpx;
+  bottom: -4rpx;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translate(-50%, -50%);
 }
 
