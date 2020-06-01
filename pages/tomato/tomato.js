@@ -1,7 +1,7 @@
 Page({
   timer: null,
   seconds: null,
-  defaultSeconds: 5,
+  defaultSeconds: 1500,
 
   data: {
     time: "",
@@ -11,13 +11,17 @@ Page({
   },
 
   onShow: function () {
-    setInterval(() => {
-      console.log(this.data.timerStatus)
-    }, 1000)
-    if (this.data.timerStatus === 'beforeStart')
+    this.render()
+
+  },
+  render() {
+    if (this.data.timerStatus === 'beforeStart' || 'abandoned' || 'completed')
       this.setData({
         time: this.formatTime(this.defaultSeconds)
       })
+    else this.setData({
+      time: this.formatTime(this.seconds)
+    })
   },
 
   formatTime(sec) {

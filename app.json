@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/tomato/tomato",
     "pages/users/users",
+    "pages/tomato/tomato",
     "pages/statistics/statistics"
   ],
   "window": {

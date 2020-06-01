@@ -23,6 +23,6 @@
 	</view>
 
 
-	<t-prompt visible="{{abandonTapped}}" placeholder="为…为什么要丢下我……" bindconfirm="confirmAbandon" bindcancel="cancelAbandon" />
+	<t-prompt visible="{{abandonTapped}}" placeholder="为什么…为什么要丢下我……" bindconfirm="confirmAbandon" bindcancel="cancelAbandon" />
 	<t-prompt visible="{{tomatoCompleted}}" placeholder="真棒！记录一下这段时间都完成了什么吧~" bindconfirm="confirmCompleted" bindcancel="cancelCompleted" />
 </view>

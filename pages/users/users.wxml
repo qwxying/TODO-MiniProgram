@@ -7,9 +7,21 @@
 			<button open-type="contact" class="qr">问题反馈</button>
 		</view>
 
-		<view class="tabs">
-			<view hover-class='hover-active' class="{{tab === 'tomato' && 'active'}}" data-name="tomato" bindtap="changeTab">番茄历史</view>
+		<view class="history">
+			番茄历史
 		</view>
 
-		<scroll-view scroll-y="true" class="lists" wx:if="{{tab === 'tomato'}}" />
+		<scroll-view scroll-y="true" class="lists">
+			<view class="item" wx:for="{{list}}" wx:for-index="key" wx:key="index">
+				<view class=" title">
+					<view class="date">{{key}}</view>
+				</view>
+				<view class="content" wx:for="{{list[key]}}" wx:for-index="index" wx:key="index">
+					<view class="time">{{item.time}}</view>
+					<view class="detail">{{item.detail}}</view>
+				</view>
+			</view>
+
+
+		</scroll-view>
 	</view>
