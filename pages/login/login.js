@@ -1,8 +1,4 @@
-import {
-  http
-} from '../../lib/http.js'
-
-
+import http from '../../lib/http.js'
 const {
   app_id,
   app_secret

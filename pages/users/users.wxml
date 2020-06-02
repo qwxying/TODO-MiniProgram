@@ -12,13 +12,13 @@
 		</view>
 
 		<scroll-view scroll-y="true" class="lists">
-			<view class="item" wx:for="{{list}}" wx:for-index="key" wx:key="index">
+			<view class="item" wx:for="{{tomatoes}}" wx:for-index="index" wx:key="index">
 				<view class=" title">
-					<view class="date">{{key}}</view>
+					<view class="date">{{item[0]}}</view>
 				</view>
-				<view class="content" wx:for="{{list[key]}}" wx:for-index="index" wx:key="index">
+				<view class="content" wx:if="{{item.description}}" wx:for="{{tomatoes[index][1]}}" wx:for-index="index" wx:key="index">
 					<view class="time">{{item.time}}</view>
-					<view class="detail">{{item.detail}}</view>
+					<view class="detail">{{item.description}}</view>
 				</view>
 			</view>
 

@@ -1,10 +1,12 @@
+import http from '../../lib/http.js'
 Page({
   timer: null,
   seconds: null,
-  defaultSeconds: 1500,
+  defaultSeconds: 5,
 
   data: {
     time: "",
+    tomatoes: {},
     timerStatus: 'beforeStart' || 'started' || 'paused' || 'completed' || 'abandoned',
     abandonTapped: false,
     tomatoCompleted: false
@@ -12,7 +14,6 @@ Page({
 
   onShow: function () {
     this.render()
-
   },
   render() {
     if (this.data.timerStatus === 'beforeStart' || 'abandoned' || 'completed')
@@ -58,6 +59,11 @@ Page({
   },
   startTimer() {
     this.seconds = this.defaultSeconds
+    http.post('/tomatoes').then(response => {
+      this.setData({
+        tomatoes: response.data.resource
+      })
+    })
     this.continueTimer()
   },
   pauseTimer() {
@@ -80,7 +86,14 @@ Page({
       abandonTapped: true
     })
   },
-  confirmAbandon() {
+  confirmAbandon(event) {
+    let content
+    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length == 0) content = '放弃番茄'
+    else content = event.detail
+    http.put(`/tomatoes/${this.data.tomatoes.id}`, {
+      description: content,
+      aborted: true
+    })
     this.setData({
       abandonTapped: false,
       timerStatus: 'abandoned',
@@ -93,7 +106,13 @@ Page({
     })
     this.continueTimer()
   },
-  confirmCompleted() {
+  confirmCompleted(event) {
+    let content
+    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length == 0) content = '完成番茄'
+    else content = event.detail
+    http.put(`/tomatoes/${this.data.tomatoes.id}`, {
+      description: content,
+    })
     this.setData({
       tomatoCompleted: false,
       timerStatus: 'completed',

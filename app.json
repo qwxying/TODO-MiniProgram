@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/users/users",
     "pages/tomato/tomato",
+    "pages/users/users",
+    "pages/login/login",
     "pages/statistics/statistics"
   ],
   "window": {
