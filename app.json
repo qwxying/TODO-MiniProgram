@@ -22,12 +22,7 @@
         "iconPath": "images/tomato.png",
         "selectedIconPath": "images/tomato-active.png"
       },
-      {
-        "pagePath": "pages/statistics/statistics",
-        "text": "统计",
-        "iconPath": "images/statistics.png",
-        "selectedIconPath": "images/statistics-active.png"
-      },
+
       {
         "pagePath": "pages/users/users",
         "text": "我的",

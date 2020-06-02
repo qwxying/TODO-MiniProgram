@@ -2,7 +2,7 @@ import http from '../../lib/http.js'
 Page({
   timer: null,
   seconds: null,
-  defaultSeconds: 5,
+  defaultSeconds: 1500,
 
   data: {
     time: "",
