@@ -52,13 +52,14 @@ Page({
       this.setData({
         time: this.formatTime(this.seconds)
       })
-      if (this.seconds === 0) {
+      if (this.seconds <= 0) {
         return this.endTimer()
       }
     }, 1000)
   },
   startTimer() {
     this.seconds = this.defaultSeconds
+    wx.vibrateLong()
     http.post('/tomatoes').then(response => {
       this.setData({
         tomatoes: response.data.resource
@@ -74,6 +75,7 @@ Page({
     })
   },
   endTimer() {
+    wx.vibrateLong()
     clearInterval(this.timer)
     this.timer = null
     this.setData({
@@ -88,7 +90,7 @@ Page({
   },
   confirmAbandon(event) {
     let content
-    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length == 0) content = '放弃番茄'
+    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length === 0) content = '放弃番茄'
     else content = event.detail
     http.put(`/tomatoes/${this.data.tomatoes.id}`, {
       description: content,
@@ -108,7 +110,7 @@ Page({
   },
   confirmCompleted(event) {
     let content
-    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length == 0) content = '完成番茄'
+    if (event.detail.replace(/(^\s*)|(\s*$)/g, "").length === 0) content = '完成番茄'
     else content = event.detail
     http.put(`/tomatoes/${this.data.tomatoes.id}`, {
       description: content,
